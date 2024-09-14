@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>test.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+test.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">unittest</span>
+<span class="s0">from </span><span class="s1">contacts </span><span class="s0">import </span><span class="s1">*</span>
+
+
+<span class="s0">class </span><span class="s1">test_01_add_contact(unittest.TestCase):</span>
+    <span class="s0">def </span><span class="s1">test_list_int(self):</span>
+        <span class="s1">contacts = [[</span><span class="s2">'Richard'</span><span class="s0">, </span><span class="s2">'Stallman'</span><span class="s1">]]</span>
+        <span class="s1">add_contact(contacts)</span>
+        <span class="s1">result = [[</span><span class="s2">'Richard'</span><span class="s0">, </span><span class="s2">'Stallman'</span><span class="s1">]</span><span class="s0">, </span><span class="s1">[</span><span class="s2">'Steve'</span><span class="s0">, </span><span class="s2">'Jobs'</span><span class="s1">]]</span>
+        <span class="s1">self.assertEqual(contacts</span><span class="s0">, </span><span class="s1">result)</span>
+
+
+<span class="s0">class </span><span class="s1">test_02_modify_contact(unittest.TestCase):</span>
+    <span class="s0">def </span><span class="s1">test_list_int(self):</span>
+        <span class="s1">contacts = [[</span><span class="s2">'Richard'</span><span class="s0">, </span><span class="s2">'Stallman'</span><span class="s1">]</span><span class="s0">, </span><span class="s1">[</span><span class="s2">'Bill'</span><span class="s0">, </span><span class="s2">'Gates'</span><span class="s1">]]</span>
+        <span class="s1">modify_contact(contacts)</span>
+        <span class="s1">result = [[</span><span class="s2">'Richard'</span><span class="s0">, </span><span class="s2">'Stallman'</span><span class="s1">]</span><span class="s0">, </span><span class="s1">[</span><span class="s2">'Steve'</span><span class="s0">, </span><span class="s2">'Jobs'</span><span class="s1">]]</span>
+        <span class="s1">self.assertEqual(contacts</span><span class="s0">, </span><span class="s1">result)</span>
+
+
+<span class="s0">class </span><span class="s1">test_03_delete_contact(unittest.TestCase):</span>
+    <span class="s0">def </span><span class="s1">test_list_int(self):</span>
+        <span class="s1">contacts = [[</span><span class="s2">'Richard'</span><span class="s0">, </span><span class="s2">'Stallman'</span><span class="s1">]</span><span class="s0">, </span><span class="s1">[</span><span class="s2">'Bill'</span><span class="s0">, </span><span class="s2">'Gates'</span><span class="s1">]</span><span class="s0">, </span><span class="s1">[</span><span class="s2">'Steve'</span><span class="s0">, </span><span class="s2">'Jobs'</span><span class="s1">]]</span>
+        <span class="s1">delete_contact(contacts)</span>
+        <span class="s1">result = [[</span><span class="s2">'Richard'</span><span class="s0">, </span><span class="s2">'Stallman'</span><span class="s1">]</span><span class="s0">, </span><span class="s1">[</span><span class="s2">'Steve'</span><span class="s0">, </span><span class="s2">'Jobs'</span><span class="s1">]]</span>
+        <span class="s1">self.assertEqual(contacts</span><span class="s0">, </span><span class="s1">result)</span>
+
+
+<span class="s0">class </span><span class="s1">test_04_sort_first_name(unittest.TestCase):</span>
+    <span class="s0">def </span><span class="s1">test_list_int(self):</span>
+        <span class="s1">contacts = [[</span><span class="s2">'Richard'</span><span class="s0">, </span><span class="s2">'Stallman'</span><span class="s1">]</span><span class="s0">, </span><span class="s1">[</span><span class="s2">'Bill'</span><span class="s0">, </span><span class="s2">'Gates'</span><span class="s1">]</span><span class="s0">, </span><span class="s1">[</span><span class="s2">'Steve'</span><span class="s0">, </span><span class="s2">'Jobs'</span><span class="s1">]]</span>
+        <span class="s1">sort_first_name(contacts)</span>
+        <span class="s1">result = [[</span><span class="s2">'Bill'</span><span class="s0">, </span><span class="s2">'Gates'</span><span class="s1">]</span><span class="s0">, </span><span class="s1">[</span><span class="s2">'Richard'</span><span class="s0">, </span><span class="s2">'Stallman'</span><span class="s1">]</span><span class="s0">, </span><span class="s1">[</span><span class="s2">'Steve'</span><span class="s0">, </span><span class="s2">'Jobs'</span><span class="s1">]]</span>
+        <span class="s1">self.assertEqual(contacts</span><span class="s0">, </span><span class="s1">result)</span>
+
+
+<span class="s0">class </span><span class="s1">test_05_sort_last_name(unittest.TestCase):</span>
+    <span class="s0">def </span><span class="s1">test_list_int(self):</span>
+        <span class="s1">contacts = [[</span><span class="s2">'Richard'</span><span class="s0">, </span><span class="s2">'Stallman'</span><span class="s1">]</span><span class="s0">, </span><span class="s1">[</span><span class="s2">'Bill'</span><span class="s0">, </span><span class="s2">'Gates'</span><span class="s1">]</span><span class="s0">, </span><span class="s1">[</span><span class="s2">'Steve'</span><span class="s0">, </span><span class="s2">'Jobs'</span><span class="s1">]]</span>
+        <span class="s1">sort_last_name(contacts)</span>
+        <span class="s1">result = [[</span><span class="s2">'Bill'</span><span class="s0">, </span><span class="s2">'Gates'</span><span class="s1">]</span><span class="s0">, </span><span class="s1">[</span><span class="s2">'Steve'</span><span class="s0">, </span><span class="s2">'Jobs'</span><span class="s1">]</span><span class="s0">, </span><span class="s1">[</span><span class="s2">'Richard'</span><span class="s0">, </span><span class="s2">'Stallman'</span><span class="s1">]]</span>
+        <span class="s1">self.assertEqual(contacts</span><span class="s0">, </span><span class="s1">result)</span>
+
+
+<span class="s0">if </span><span class="s1">__name__ == </span><span class="s2">'__main__'</span><span class="s1">:</span>
+    <span class="s0">with </span><span class="s1">open(</span><span class="s2">'test.py'</span><span class="s0">, </span><span class="s2">'w'</span><span class="s1">) </span><span class="s0">as </span><span class="s1">f:</span>
+        <span class="s1">runner = unittest.TextTestRunner(f)</span>
+        <span class="s1">unittest.main(testRunner=runner)</span>
+</pre>
+</body>
+</html>

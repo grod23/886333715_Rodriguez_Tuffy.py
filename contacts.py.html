@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>contacts.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+contacts.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Gabriel Rodriguez</span>
+<span class="s0"># 9/4/24</span>
+<span class="s0"># Tuffy Titan Contact List</span>
+
+<span class="s2">def </span><span class="s1">print_list(contact_list):</span>
+    <span class="s1">print(</span><span class="s3">'***Tuffy Contact List***</span><span class="s2">\n</span><span class="s3">'</span><span class="s1">)</span>
+    <span class="s2">for </span><span class="s1">index</span><span class="s2">, </span><span class="s1">contact </span><span class="s2">in </span><span class="s1">enumerate(contact_list):</span>
+        <span class="s1">print(</span><span class="s3">f' </span><span class="s2">{</span><span class="s1">index</span><span class="s2">} {</span><span class="s1">contact[</span><span class="s4">0</span><span class="s1">]</span><span class="s2">} {</span><span class="s1">contact[</span><span class="s4">1</span><span class="s1">]</span><span class="s2">}\n</span><span class="s3">'</span><span class="s1">)</span>
+
+
+<span class="s2">def </span><span class="s1">add_contact(contact_list):</span>
+    <span class="s1">new_contact = []</span>
+    <span class="s1">first_name = input(</span><span class="s3">'What is contacts first name? '</span><span class="s1">)</span>
+    <span class="s1">last_name = input(</span><span class="s3">'What is contacts last name? '</span><span class="s1">)</span>
+    <span class="s1">new_contact.append(first_name)</span>
+    <span class="s1">new_contact.append(last_name)</span>
+    <span class="s1">contact_list.append(new_contact)</span>
+    <span class="s2">return </span><span class="s1">contact_list</span>
+
+
+<span class="s2">def </span><span class="s1">modify_contact(contact_list):</span>
+    <span class="s2">try</span><span class="s1">:</span>
+        <span class="s1">index = int(input(</span><span class="s3">'What is the index of the contact you wish to change? '</span><span class="s1">))</span>
+    <span class="s2">except </span><span class="s1">ValueError:</span>
+        <span class="s1">print(</span><span class="s3">'Invalid Index!'</span><span class="s1">)</span>
+        <span class="s2">return </span><span class="s1">contact_list</span>
+    <span class="s1">new_contact = []</span>
+    <span class="s1">first_name = input(</span><span class="s3">'What is the contacts first name? '</span><span class="s1">)</span>
+    <span class="s1">last_name = input(</span><span class="s3">'What is the contacts last name? '</span><span class="s1">)</span>
+    <span class="s1">new_contact.append(first_name)</span>
+    <span class="s1">new_contact.append(last_name)</span>
+    <span class="s1">contact_list[index] = new_contact</span>
+    <span class="s2">return </span><span class="s1">contact_list</span>
+
+
+<span class="s2">def </span><span class="s1">delete_contact(contact_list):</span>
+    <span class="s1">length = len(contact_list)</span>
+    <span class="s1">index = int(input(</span><span class="s3">'What is the index of the contact you want to remove? '</span><span class="s1">))</span>
+    <span class="s2">if </span><span class="s1">index &lt; </span><span class="s4">0 </span><span class="s2">or </span><span class="s1">index &gt;= length:</span>
+        <span class="s1">print(</span><span class="s3">'Invalid index!'</span><span class="s1">)</span>
+        <span class="s2">return </span><span class="s1">contact_list</span>
+    <span class="s1">contact_list.remove(contact_list[index])</span>
+    <span class="s2">return </span><span class="s1">contact_list</span>
+
+
+<span class="s2">def </span><span class="s1">sort_first_name(contact_list):</span>
+    <span class="s1">contact_list.sort(key=</span><span class="s2">lambda </span><span class="s1">contact: contact[</span><span class="s4">0</span><span class="s1">])</span>
+    <span class="s2">return </span><span class="s1">contact_list</span>
+
+
+<span class="s2">def </span><span class="s1">sort_last_name(contact_list):</span>
+    <span class="s1">contact_list.sort(key=</span><span class="s2">lambda </span><span class="s1">contact: contact[</span><span class="s4">1</span><span class="s1">])</span>
+    <span class="s2">return </span><span class="s1">contact_list</span>
+</pre>
+</body>
+</html>
